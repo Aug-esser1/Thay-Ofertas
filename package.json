@@ -1,15 +1,18 @@
 {
   "name": "thay-ofertas",
   "version": "1.0.0",
-  "description": "Site de ofertas",
-  "main": "index.js",
+  "private": true,
+  "description": "Site de ofertas com integração Firebase",
+  "type": "module",
   "scripts": {
-    "build": "echo build ok"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "dependencies": {}
-
-  "scripts": {
-  "build": "vite build"
-}
-
+  "dependencies": {
+    "firebase": "^10.12.0"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
+  }
 }
