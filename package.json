@@ -1,8 +1,10 @@
-node_modules/
-build/
-dist/
-coverage/
-.DS_Store
-*.log
-.env*
-!.env.example
+{
+  "name": "thay-ofertas",
+  "version": "1.0.0",
+  "description": "Site de ofertas",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo build ok"
+  },
+  "dependencies": {}
+}
