@@ -7,4 +7,9 @@
     "build": "echo build ok"
   },
   "dependencies": {}
+
+  "scripts": {
+  "build": "vite build"
+}
+
 }
