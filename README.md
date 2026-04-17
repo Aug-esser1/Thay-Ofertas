@@ -1,0 +1,41 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "A curated Amazon product offer",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Display name of the product" },
+        "description": { "type": "string", "description": "Detailed description of the product" },
+        "opinion": { "type": "string", "description": "The curator's personal opinion" },
+        "price": { "type": "string", "description": "Formatted price (e.g. R$ 59,90)" },
+        "image": { "type": "string", "description": "URL of the product image" },
+        "amazonUrl": { "type": "string", "description": "The affiliate link URL" },
+        "rating": { "type": "number", "description": "Rating out of 5" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp of creation" }
+      },
+      "required": ["title", "amazonUrl", "createdAt"]
+    },
+    "User": {
+      "title": "User",
+      "description": "User profile and role management",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "description": "User email address" },
+        "role": { "type": "string", "enum": ["admin", "user"], "description": "Access level" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the user was registered" }
+      },
+      "required": ["email", "role"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Collection of all curated products"
+    },
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile collection for authentication and roles"
+    }
+  }
+}

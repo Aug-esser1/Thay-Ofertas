@@ -1,0 +1,87 @@
+import React from 'react';
+import { motion } from 'motion/react';
+
+export default function Terms() {
+  return (
+    <div className="max-w-3xl mx-auto py-12 px-6 lg:py-24">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="prose prose-brand"
+      >
+        <div className="text-[11px] uppercase tracking-widest font-bold text-brand-primary mb-4 italic">Jurídico</div>
+        <h1 className="font-display text-5xl italic border-b-2 border-brand-primary inline-block mb-12 pb-4">Termos de Uso</h1>
+        
+        <p className="text-[12px] text-muted mb-8 uppercase tracking-widest font-bold">Última atualização: 16/04/2026</p>
+
+        <section className="space-y-8 text-muted leading-relaxed">
+          <p>
+            Ao acessar o site Vitrine Thaísa Lima, você concorda com os termos e condições descritos abaixo. Caso não concorde, recomendamos que não utilize este site.
+          </p>
+
+          <div>
+            <h2 className="text-ink font-display text-2xl italic mb-4">1. Sobre o site</h2>
+            <p>
+              O site Vitrine Thaísa Lima tem como objetivo apresentar e recomendar produtos disponíveis na internet, com foco em ofertas, custo-benefício e praticidade para o dia a dia.
+              As informações disponibilizadas são de caráter informativo e podem ser atualizadas a qualquer momento sem aviso prévio.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-ink font-display text-2xl italic mb-4">2. Programa de Afiliados</h2>
+            <p>
+              Este site participa de programas de afiliados, incluindo o da Amazon. Como Associado da Amazon, eu recebo comissão pelas compras qualificadas.
+              Isso significa que, ao clicar em determinados links e realizar uma compra, podemos receber uma comissão sem custo adicional para você.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-ink font-display text-2xl italic mb-4">3. Uso das informações</h2>
+            <p>
+              As informações contidas neste site são baseadas em pesquisas, avaliações de mercado e curadoria de produtos. Não garantimos: disponibilidade dos produtos, preços atualizados ou resultados específicos com o uso dos produtos.
+              O usuário é responsável por verificar as informações diretamente no site do fornecedor antes de realizar qualquer compra.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-ink font-display text-2xl italic mb-4">4. Links externos</h2>
+            <p>
+              Nosso site pode conter links para sites de terceiros, como a Amazon. Não temos controle sobre as políticas desses sites, práticas de privacidade ou condições de venda.
+              Recomendamos que o usuário leia os termos e políticas de cada site acessado.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-ink font-display text-2xl italic mb-4">5. Limitação de responsabilidade</h2>
+            <p>
+              O site Vitrine Thaísa Lima não se responsabiliza por danos diretos ou indiretos causados pelo uso de produtos adquiridos, problemas com entrega, troca ou garantia, ou prejuízos decorrentes de decisões tomadas com base nas informações do site.
+              Toda responsabilidade sobre a compra é do fornecedor (ex: Amazon).
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-ink font-display text-2xl italic mb-4">6. Propriedade intelectual</h2>
+            <p>
+              Todo o conteúdo deste site (textos, imagens, layout) é protegido por direitos autorais, salvo quando indicado o contrário. É proibida a reprodução, cópia ou distribuição sem autorização prévia.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-ink font-display text-2xl italic mb-4">7. Alterações nos termos</h2>
+            <p>
+              Este Termo de Uso pode ser atualizado a qualquer momento, sem aviso prévio. Recomendamos que o usuário revise esta página periodicamente.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-ink font-display text-2xl italic mb-4">8. Contato</h2>
+            <p>
+              Em caso de dúvidas, sugestões ou solicitações, entre em contato: <br />
+              📧 <strong>thaisalima.ofertas@gmail.com</strong>
+            </p>
+          </div>
+        </section>
+      </motion.div>
+    </div>
+  );
+}

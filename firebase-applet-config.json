@@ -1,0 +1,35 @@
+import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../lib/firebase';
+
+export interface UserProfile {
+  uid: string;
+  email: string | null;
+  role: 'admin' | 'user';
+  createdAt: any;
+}
+
+export const getUserProfile = async (uid: string): Promise<UserProfile | null> => {
+  const docRef = doc(db, 'users', uid);
+  const docSnap = await getDoc(docRef);
+  if (docSnap.exists()) {
+    return docSnap.data() as UserProfile;
+  }
+  return null;
+};
+
+export const ensureAdminUser = async (uid: string, email: string | null) => {
+  const profile = await getUserProfile(uid);
+  if (!profile) {
+    const isAdmin = email === 'thaisalima.bvj@gmail.com' || email === 'thaisalima.ofertas@gmail.com';
+    if (isAdmin) {
+      await setDoc(doc(db, 'users', uid), {
+        uid,
+        email,
+        role: 'admin',
+        createdAt: serverTimestamp()
+      });
+      return true;
+    }
+  }
+  return profile?.role === 'admin';
+};

@@ -1,0 +1,72 @@
+import React from 'react';
+import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
+
+export default function Guides() {
+  return (
+    <div className="max-w-4xl mx-auto py-12 px-6 lg:py-24">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        <div className="text-[11px] uppercase tracking-widest font-bold text-brand-primary mb-4 italic">Conteúdo</div>
+        <h1 className="font-display text-4xl lg:text-6xl italic leading-tight mb-12">
+          Como escolher os melhores produtos <br className="hidden lg:block" />
+          para sua casa <span className="text-brand-primary">(Guia completo)</span>
+        </h1>
+
+        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-16 items-start">
+          <section className="space-y-6 text-muted text-lg leading-relaxed">
+            <p>
+              Na hora de comprar produtos para casa, é comum ficar em dúvida entre tantas opções disponíveis. Pensando nisso, criamos este guia simples para te ajudar a escolher os melhores itens com base em custo-benefício, qualidade e praticidade no dia a dia.
+            </p>
+            <p>
+              Antes de tudo, é importante avaliar o que realmente faz diferença na sua rotina. Produtos que economizam tempo, facilitam a organização ou melhoram o conforto da casa tendem a ser os mais vantajosos. Nem sempre o mais caro é o melhor — o segredo está no equilíbrio entre preço e utilidade.
+            </p>
+            <p>
+              Outro ponto essencial é verificar avaliações de outros compradores. Produtos bem avaliados costumam ter melhor durabilidade e desempenho. Sempre priorizamos itens com boas recomendações e que já foram testados por milhares de pessoas.
+            </p>
+            <p>
+              Também consideramos a praticidade. Produtos fáceis de usar, limpar e guardar fazem toda a diferença no dia a dia. Nossa curadoria é focada exatamente nisso: facilitar sua vida com soluções simples e eficientes.
+            </p>
+          </section>
+
+          <aside className="bg-white p-8 border border-gray-100 shadow-sm rounded-sm">
+            <h2 className="text- ink font-display text-xl italic mb-6 border-b border-brand-primary/20 pb-2">
+              Como selecionamos os produtos indicados:
+            </h2>
+            <ul className="space-y-4">
+              {[
+                "Avaliações positivas na Amazon",
+                "Melhor custo-benefício",
+                "Funcionalidade no dia a dia",
+                "Boa durabilidade",
+                "Facilidade de uso"
+              ].map((item) => (
+                <li key={item} className="flex items-center space-x-3 text-sm text-gray-700">
+                  <CheckCircle2 size={18} className="text-brand-primary shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        </div>
+
+        <div className="mt-16 p-10 bg-ink text-white rounded-sm flex flex-col items-center text-center">
+          <h3 className="font-display text-2xl italic mb-4">Pronta para transformar sua casa?</h3>
+          <p className="text-white/70 max-w-xl mb-8">
+            Nosso objetivo é indicar apenas produtos que realmente valem a pena. Todos os itens disponíveis em nossa vitrine foram escolhidos com cuidado para garantir praticidade, economia e qualidade para você.
+          </p>
+          <Link 
+            to="/" 
+            className="group flex items-center space-x-3 bg-brand-primary text-ink px-8 py-4 rounded-full font-sans text-xs font-bold uppercase tracking-widest hover:bg-white transition-all transform hover:scale-105"
+          >
+            <span>Ver produtos recomendados</span>
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
